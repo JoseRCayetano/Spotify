@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Spotify artist search</title>
+
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <script src="./js/jquery-2.2.4.min.js"></script>
+        <script>
+            $(document).ready(function(){
+               $("#btn-search").click(function (){
+                   var name = $("#artist-search-input").val();
+                   var url = "https://api.spotify.com/v1/search?q="+name+"&type=artist&limit=50";
+                   request(url,"format_artists");
+               });
+               //Detect enter press
+               $(document).keypress(function(e) {
+                    if(e.which === 13) {
+                        e.preventDefault();
+                        var name = $("#artist-search-input").val();
+                        var url = "https://api.spotify.com/v1/search?q="+name+"&type=artist&limit=50";
+                        request(url,"format_artists");
+                    }
+                });
+                $('.carousel').carousel({
+                    interval: false
+                }); 
+                
+            });
+            
+        </script>
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <!--
+        <div id="myCarousel" class="carousel slide container-fluid" data-ride="carousel">
+           
+            <ol class="carousel-indicators list-inline">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
+            </ol>
+
+            
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <ul class="list-inline text-center">
+                        <li><img src="./images/default.jpg" alt="Chania"></li>
+                        <li><img src="./images/default.jpg" alt="Chania"></li>
+                        <li><img src="./images/default.jpg" alt="Flower"></li>
+                        <li><img src="./images/default.jpg" alt="Chania"></li>
+                        <li><img src="./images/default.jpg" alt="Chania"></li>
+                    </ul>
+                    <ul class="list-inline text-center">
+                        <li><img src="./images/default.jpg" alt="Chania"></li>
+                        <li><img src="./images/default.jpg" alt="Chania"></li>
+                        <li><img src="./images/default.jpg" alt="Flower"></li>
+                        <li><img src="./images/default.jpg" alt="Chania"></li>
+                        <li><img src="./images/default.jpg" alt="Chania"></li>
+                    </ul>
+                </div>
+
+
+                <div class="item ">
+                    <ul class="list-inline text-center">
+                        <li><img src="./images/default.jpg" alt="Chania"></li>
+                        <li><img src="./images/default.jpg" alt="Chania"></li>
+                        <li><img src="./images/default.jpg" alt="Flower"></li>
+                        <li><img src="./images/default.jpg" alt="Chania"></li>
+                        <li><img src="./images/default.jpg" alt="Chania"></li>
+                    </ul>
+                    <ul class="list-inline text-center">
+                        <li><img src="./images/default.jpg" alt="Chania"></li>
+                        <li><img src="./images/default.jpg" alt="Chania"></li>
+                        <li><img src="./images/default.jpg" alt="Flower"></li>
+                        <li><img src="./images/default.jpg" alt="Chania"></li>
+                        <li><img src="./images/default.jpg" alt="Chania"></li>
+                    </ul>
+                </div>
+
+                <div class="item">
+                    <ul class="list-inline text-center">
+                        <li><img src="./images/default.jpg" alt="Chania"></li>
+                        <li><img src="./images/default.jpg" alt="Chania"></li>
+                        <li><img src="./images/default.jpg" alt="Flower"></li>
+                        <li><img src="./images/default.jpg" alt="Chania"></li>
+                        <li><img src="./images/default.jpg" alt="Chania"></li>
+                    </ul>
+                    <ul class="list-inline text-center">
+                        <li><img src="./images/default.jpg" alt="Chania"></li>
+                        <li><img src="./images/default.jpg" alt="Chania"></li>
+                        <li><img src="./images/default.jpg" alt="Flower"></li>
+                        <li><img src="./images/default.jpg" alt="Chania"></li>
+                        <li><img src="./images/default.jpg" alt="Chania"></li>
+                    </ul>
+                </div>
+
+                <div class="item">
+                    <ul class="list-inline text-center">
+                        <li><img src="./images/default.jpg" alt="Chania"></li>
+                        <li><img src="./images/default.jpg" alt="Chania"></li>
+                        <li><img src="./images/default.jpg" alt="Flower"></li>
+                        <li><img src="./images/default.jpg" alt="Chania"></li>
+                        <li><img src="./images/default.jpg" alt="Chania"></li>
+                    </ul>
+                    <ul class="list-inline text-center">
+                        <li><img src="./images/default.jpg" alt="Chania"></li>
+                        <li><img src="./images/default.jpg" alt="Chania"></li>
+                        <li><img src="./images/default.jpg" alt="Flower"></li>
+                        <li><img src="./images/default.jpg" alt="Chania"></li>
+                        <li><img src="./images/default.jpg" alt="Chania"></li>
+                    </ul>
+                </div>
+            </div>
+      
+        
+ 
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>-->
+        <div id="modal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Album</h4>
+                    </div>
+                    <div class="modal-body">
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <div class="container-fluid">
+            <header class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-default">
+                        <div class="container-fluid">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" >
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                
+                                <a class="navbar-brand" href="#">Spotify Search Artist</a>
+                            </div>
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <form class="navbar-form navbar-right" role="search">
+                                    <div class="form-group">
+                                        <input id="artist-search-input" type="text" class="form-control personal-input" placeholder="Search artist...">
+                                    </div>
+                                    <button id="btn-search" type="button" class="btn btn-default">Search</button>
+                                    
+                                </form>
+                            </div><!-- /.navbar-collapse -->
+                        </div><!-- /.container-fluid -->
+                    </nav>
+                </div>
+            </header>
+            <div class="row">
+                <Section id="artists" class="col-md-12 well">
+                    <h2>Artist</h2>
+                    <ul id="artists_list" class="list-inline list-unstyled"></ul>
+                </section>
+            </div>
+            <div  class="row">
+                <section id="albums" class="col-md-12 well">
+                    <h2>Albums</h2>
+                    <ul id="albums_list" class="list-inline list-unstyled"></ul>
+                </section>
+            </div>
+            <div class="row">
+                <section id="tracklist_list" class="col-md-12 well">
+                    <h2>Tracklist</h2>
+                </section> 
+                
+            </div>
+        </div>
+        <script src="./js/js.js"></script> 
+        
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- jQuery 2 load from project folder -->
+        
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+body {
+    background-color: #121314; 
+    color:#686969;
+}
+
+img {
+    height: 200px;
+    width: 200px;
+    margin: 5px 0;
+}
+.personal-input {
+    border-radius: 26px;
+}
+img:hover {
+    cursor: pointer;
+   
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+}
+.well {
+    background-color:#232329;
+    border: 0;
+}
+
+/* Carrousel style*/
+.carousel-indicators{
+    bottom: -20px; 
+}
+.carousel-indicators li{
+    background-color: gray;
+    border-color:gray;
+    border-radius:0px;
+    height: 5px;
+    width: 20px;
+}
+.carousel-indicators .active{
+   background-color: white;
+   border-color:white;
+    border-radius:0px;
+    height: 5px;
+    width: 20px;
+}
+
+.glyphicon-chevron-left:before {
+    content: "\e251";
+}
+.glyphicon-chevron-right:before {
+    content: "\e250";
+}
